@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import okhttp3.ResponseBody
@@ -26,14 +27,19 @@ class register : AppCompatActivity() {
 
         etUsername= findViewById(R.id.etRUserName)
         etPassword= findViewById(R.id.etRPassword)
-        btnRegister=findViewById(R.id.btnRegister)
+        btnRegister= findViewById(R.id.btnRegister)
 
             btnRegister.setOnClickListener {
-               // Toast.makeText(this,"Success is working", Toast.LENGTH_LONG).show();
                 registerUser()
     }
+        //for routing to the login page
+        this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener{
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
 
     }
+
 
     private fun registerUser() {
         val userName: String = etUsername.getText().toString().trim()
@@ -67,7 +73,7 @@ class register : AppCompatActivity() {
                         "Successfully registered. Please login",
                         Toast.LENGTH_LONG
                     ).show()
-                    startActivity(Intent(this@register, login::class.java))
+                    startActivity(Intent(this@register, LoginActivity::class.java))
                 } else {
                     Toast.makeText(this@register, "User already exists!", Toast.LENGTH_LONG).show()
                 }
