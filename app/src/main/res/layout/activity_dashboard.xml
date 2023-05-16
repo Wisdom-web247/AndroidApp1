@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
         android:padding="10dp"
-        android:text="SpringDroid"
+        android:text="Money Ma"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="60sp"
         android:textStyle="bold"
