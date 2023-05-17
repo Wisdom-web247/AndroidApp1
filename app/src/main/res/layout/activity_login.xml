@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+
         android:padding="10dp"
-        android:text="SpringDroid"
+        android:text="Speculate"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="60sp"
         android:textStyle="bold"
