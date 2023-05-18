@@ -63,7 +63,6 @@ class LoginActivity : AppCompatActivity() {
 
         if (userName.isEmpty()) {
 
-
             Name.setError("Username is required")
             Name.requestFocus()
             return

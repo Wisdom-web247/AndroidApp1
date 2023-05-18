@@ -18,8 +18,10 @@ class register : AppCompatActivity() {
 
     //Binding variables so that we will be able to put functions
      lateinit var etPassword:EditText
+    lateinit var etConfirmPassword:EditText
      lateinit var etUsername:EditText
      lateinit var btnRegister:Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
