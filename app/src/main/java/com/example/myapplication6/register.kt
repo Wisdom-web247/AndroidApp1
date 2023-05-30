@@ -39,11 +39,7 @@ class register : AppCompatActivity() {
         this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
-
     }
-
-
     private fun registerUser() {
         val userName: String = etUsername.getText().toString().trim()
         val password: String = etPassword.getText().toString().trim()
@@ -58,9 +54,15 @@ class register : AppCompatActivity() {
             etPassword.requestFocus()
             return
         } else if (confirmPassword.isEmpty()) {
-            etConfirmPassword.setError("Password is required")
+            etConfirmPassword.setError("Please Confirm Password")
             etConfirmPassword.requestFocus()
             return
+
+        }  else if (password != confirmPassword){
+            etConfirmPassword.setError("Password does not match")
+            etConfirmPassword.requestFocus()
+            return
+
         }
             val call: Call<ResponseBody> =
                 RetrofitClient.getInstance().api.createUser(User(userName, password))
@@ -89,6 +91,8 @@ class register : AppCompatActivity() {
                             .show()
                     }
                 }
+
+               // if (!etPassword.equals)
 
                 override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
                     Toast.makeText(this@register, t.message, Toast.LENGTH_LONG).show()
