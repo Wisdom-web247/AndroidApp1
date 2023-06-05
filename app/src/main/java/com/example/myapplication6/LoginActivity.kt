@@ -15,7 +15,7 @@ import java.io.IOException
 
 private lateinit var btnRegister: Button
 private lateinit var btnlogin: Button
-
+//private lateinit etConfirmPassword: EditText
 
 
 class LoginActivity : AppCompatActivity() {
@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         var UsernameString: String
         var PasswordString: String
         var btnRegUser: Button
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -44,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
             Password = findViewById(R.id.etPassword)
             UsernameString = username.getText().toString()
             PasswordString = Password.getText().toString()
+          //  etConfirmPassword = findViewById(R.id.etConfirmPassword)
 
             //Calling the Login Function
             login(username, Password)
@@ -55,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
     fun login(Name:EditText,Pass:EditText) {
         val userName: String = Name.getText().toString().trim()
         val password: String = Pass.getText().toString().trim()
+        //val confirmPassword: String = etConfirmPassword.getText().toString().trim()
 
         val call: Call<ResponseBody> = RetrofitClient
             .getInstance()
